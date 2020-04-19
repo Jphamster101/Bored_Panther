@@ -1,0 +1,30 @@
+{
+  "name": "panther-plots",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha",
+    "lint": "npx eslint .",
+    "lint-fix": "npx eslint --fix .",
+    "docker-run": "sudo docker-compose up",
+    "change_dbd_permission": "sudo chmod 777 db_data",
+    "delete_dbd": "sudo rm -rf db_data",
+    "remove_container": "sudo docker-compose down"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mocha": "^7.1.0",
+    "mongoose": "^5.9.3",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

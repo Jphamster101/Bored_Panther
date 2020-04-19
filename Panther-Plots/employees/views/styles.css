@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+  }
+
+  input[type=text] 
+  {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input[type=submit] {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  #website_name {
+    color:rgb(230, 230, 0);
+    font-size: 50px;
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+  }
+
+  #title_bg {
+    background: rgb(107, 0, 179);
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+
+  img {
+    padding-top: 20px;
+  }

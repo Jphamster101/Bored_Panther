@@ -1,0 +1,8 @@
+extends layout.pug
+
+block whatever
+    h1#main_text=message
+    form(method='GET', action='/employees/submit/')
+        input(type="text", placeholder="Enter the Employee Id", name="employeeId")
+        br
+        input(type="submit", name="Find" value="Search")

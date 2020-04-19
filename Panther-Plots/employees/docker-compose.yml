@@ -1,0 +1,19 @@
+version: '3'
+services:
+    web:
+        image: "node:13"
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/usr/src/panther-plots
+        working_dir: /usr/src/panther-plots
+        entrypoint: ["npm", "start"]
+    db:
+        image: "mongo:4"
+        volumes:
+            - ./init-data.js:/docker-entrypoint-initdb.d/init-data.js
+            - ./db_data:/data/db
+        ports:
+            - "27017:27017"
+        environment:
+            MONGO_INITDB_DATABASE: 'employees'
