@@ -26,7 +26,7 @@ connectWithRetry();
 router.get('/all', async function(req, res, next) {
   try {
     const results = await Employee.find({}, 'firstName lastName employeeId\
-                                        hourlyWage phoneNumber');
+                                        hourlyWage phoneNumber certifications');
     res.json(results);
   } catch (err) {
     res.status(500).json({message: err.message});
@@ -36,9 +36,11 @@ router.get('/all', async function(req, res, next) {
 router.get('/get-profile/:id', async function(req, res, next) {
   try {
     const results = await Employee.findOne({employeeId: req.params.id});
-    res.render('results', {title: 'Employee Found', message: "Name: " + 
-    results.firstName + " " + results.lastName, e_id: "Employee Id: " + results.employeeId,
-    hourlyWage: "Hourly Wage: " + results.hourlyWage, phoneNumber:"Phone Number: " + results.phoneNumber});
+    res.render('results', {title: 'Employee Found', message: "Name: " + results.firstName + " " + results.lastName, 
+    e_id: "Employee Id: " + results.employeeId,
+    hourlyWage: "Hourly Wage: " + results.hourlyWage.toFixed(2) + "$/hr", 
+    phoneNumber:"Phone Number: " + results.phoneNumber, 
+    certifications: "Certifications: " + results.certifications});
   } catch (err) {
     res.send("Employee " + req.params.id +  " does not exist");
     // res.status(500).json({message: err.message});
